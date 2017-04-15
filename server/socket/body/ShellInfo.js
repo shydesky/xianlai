@@ -1,0 +1,73 @@
+var ByteBuffer=require("../ByteBuffer");
+var ShellInfo=function(){
+//
+	this.shellId=0;
+//
+	this.direct_x="";
+//
+	this.direct_y="";
+//
+	this.worldX=0;
+//
+	this.worldY=0;
+//
+	this.boold=0;
+//
+	this.distance=0;
+//
+	this.skin="";
+//发出者id
+	this.uid="";
+//分身id
+	this.roleNumber=0;
+//发出者name
+	this.name="";
+
+this.write=function(bodybuff)
+{
+	bodybuff.putInt(this.shellId);
+	bodybuff.putUTF(this.direct_x);
+	bodybuff.putUTF(this.direct_y);
+	bodybuff.putInt(this.worldX);
+	bodybuff.putInt(this.worldY);
+	bodybuff.putLongType(this.boold);
+	bodybuff.putInt(this.distance);
+	bodybuff.putUTF(this.skin);
+	bodybuff.putUTF(this.uid);
+	bodybuff.putInt(this.roleNumber);
+	bodybuff.putUTF(this.name);
+};
+this.read=function(buffer)
+{
+	this.shellId=buffer.readInt();
+	this.direct_x=buffer.readUTF();
+	this.direct_y=buffer.readUTF();
+	this.worldX=buffer.readInt();
+	this.worldY=buffer.readInt();
+	this.boold=buffer.readLongType();
+	this.distance=buffer.readInt();
+	this.skin=buffer.readUTF();
+	this.uid=buffer.readUTF();
+	this.roleNumber=buffer.readInt();
+	this.name=buffer.readUTF();
+};
+this.clone=function()
+{
+var cloneObj={};
+cloneObj.shellId=this.shellId;
+cloneObj.direct_x=this.direct_x;
+cloneObj.direct_y=this.direct_y;
+cloneObj.worldX=this.worldX;
+cloneObj.worldY=this.worldY;
+cloneObj.boold=this.boold;
+cloneObj.distance=this.distance;
+cloneObj.skin=this.skin;
+cloneObj.uid=this.uid;
+cloneObj.roleNumber=this.roleNumber;
+cloneObj.name=this.name;
+cloneObj.read=this.read;
+cloneObj.write=this.write;
+return cloneObj;
+};
+};
+module.exports = ShellInfo;

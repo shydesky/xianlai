@@ -1,0 +1,1 @@
+kill -kill $(pidof node)

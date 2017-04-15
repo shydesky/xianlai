@@ -1,0 +1,17 @@
+BallGame是工程文件
+
+BallGame/frameworks/runtime-src/proj.android-studio 这个是android studio工程
+BallGame/frameworks/runtime-src/proj.android-proj.ios_mac 这个是ios工程
+
+
+BallGame_ios 这个是打包ios的时候使用的工程，把BallGame下的src下的js文件编译成jsc文件 这样别人就看不到源码了。替换掉BallGame_ios
+下的src目录就可以。
+
+
+server目录是 服务器程序目录：
+
+start.sh 运行命令
+stop.sh 停止命令
+
+
+
